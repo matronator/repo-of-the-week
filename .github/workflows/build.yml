@@ -6,7 +6,7 @@ on:
     - cron: "0 0 * * 0"
 
 env:
-  USERNAME: ${{ github.actor }}
+  GH_USER: ${{ github.actor }}
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
           node-version-file: '.nvmrc'
       - name: Install node dependencies
         run: npm ci
-      - name: Check for RSS feed updates
+      - name: Update repo of the week
         run: npm run refresh
       - name: Commit and push
         run: |-

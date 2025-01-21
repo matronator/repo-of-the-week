@@ -3,11 +3,14 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-      "refresh": "node update-readme.js"
+        "refresh": "node update-readme.js"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/matronator/repo-of-the-week.git"
+        "type": "git",
+        "url": "git+https://github.com/matronator/repo-of-the-week.git"
     },
-    "license": "MIT"
-  }
+    "license": "MIT",
+    "dependencies": {
+        "node-fetch": "^3.3.2"
+    }
+}
