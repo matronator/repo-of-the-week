@@ -1,0 +1,13 @@
+{
+    "name": "repo-of-the-week",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+      "refresh": "node update-readme.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/matronator/repo-of-the-week.git"
+    },
+    "license": "MIT"
+  }
