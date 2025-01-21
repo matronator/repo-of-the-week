@@ -12,6 +12,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -23,11 +28,5 @@ jobs:
         run: npm ci
       - name: Update repo of the week
         run: npm run refresh
-      - name: Commit and push
-        run: |-
-          git diff
-          git config --global user.email "actions@users.noreply.github.com"
-          git config --global user.name "README-bot"
-          git add -A
-          git commit -m "Update content" || git commit --allow-empty -m "Empty commit"
-          git push
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
