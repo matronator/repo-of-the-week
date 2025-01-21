@@ -5,7 +5,7 @@ const API_URL = "https://api.github.com";
 
 try {
     const username = process.env.GH_USER ?? "matronator";
-    const url = `${API_URL}/users/${username}/repos?per_page=200`;
+    const url = `${API_URL}/users/${username}/repos?per_page=20&sort=stars`;
     const response = await fetch(url);
     const repos = await response.json();
     const repoOfTheWeek = repos[Math.floor(Math.random() * (repos.length - 1))];
